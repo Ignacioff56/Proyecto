@@ -1,5 +1,13 @@
 .Header {
-  position: fixed;
-  background-color: rgb(31, 54, 158);
-  width: 100%;
+  width: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+#light .Header {
+  background-color: rgb(152, 221, 162);
+}
+
+#dark .Header {
+  background-color: rgb(28, 131, 67);
 }

@@ -1,0 +1,7 @@
+#light .Footer {
+  background-color: rgb(152, 221, 162);
+}
+
+#dark .Footer {
+  background-color: rgb(28, 131, 67);
+}
