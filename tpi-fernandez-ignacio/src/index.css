@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: aliceblue;
+  height: 100%;
 }
 
 code {

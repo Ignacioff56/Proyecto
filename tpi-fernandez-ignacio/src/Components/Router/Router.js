@@ -13,9 +13,8 @@ const router = createBrowserRouter(
       <Route path="/Articles" element={<ArticleScreen />} />
       <Route path="/Login" element={<LoginScreen />} />
 
-      {
-        //<Route path="/Articles/:id" element={<ArticleDetail />} />}
-      }
+      <Route path="/Articles/:id" element={<ArticleDetail />} />
+
       <Route path="*" element={<NotFound />} />
     </Route>
   )
@@ -24,7 +23,7 @@ const router = createBrowserRouter(
 const Router = () => {
   return (
     <div>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </div>
   );
 };

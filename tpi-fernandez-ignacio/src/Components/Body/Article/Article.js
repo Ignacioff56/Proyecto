@@ -10,7 +10,7 @@ const Article = ({ articleData }) => {
       <p className="Category">Categoria: {articleData.Category}</p>
       <p>{articleData.Text}</p>
       <Link className="btn" to={`/Articles/${articleData.id}`}>
-        View Fullscreen
+        Ver en detalle
       </Link>
     </div>
   );

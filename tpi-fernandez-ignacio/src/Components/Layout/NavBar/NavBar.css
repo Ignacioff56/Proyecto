@@ -1,0 +1,17 @@
+.NavBar {
+  width: 100%;
+
+  text-align: center;
+  padding-bottom: 1%;
+
+  border-color: rgb(39, 87, 0);
+  border-style: groove;
+}
+
+#light .NavBar {
+  background-color: rgb(177, 177, 177);
+}
+
+#dark .NavBar {
+  background-color: rgb(73, 73, 73);
+}

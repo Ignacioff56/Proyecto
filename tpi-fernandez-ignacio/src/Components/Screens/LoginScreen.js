@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { login } from "../Services/AuthApi";
 import { useNavigate } from "react-router-dom";
+import "./LoginScreen.css";
+import { AuthDispatchContext } from "../Context/AuthDispatchContext";
 
 const LoginScreen = ({}) => {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const Navigate = useNavigate();
+  const setCurrentUser = useContext(AuthDispatchContext);
+
   return (
     <div className="LoginScreen">
       <h1>Login para Administradores</h1>
-      <h2>Ingrese la Clave: </h2>
-      <label for="password">Contraseña</label>
+      <label for="username">username</label>
+      <input id="username" type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+      <label for="password">Contraseña </label>
       <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
       <button
         onClick={() => {
-          login(password)
+          login(username, password)
             .then((user) => {
+              setCurrentUser(user);
               console.log("login correcto", user);
               Navigate("/");
             })

@@ -1,19 +1,19 @@
-.Article {
-  width: 15%;
-  height: 5%;
+.ArticleDetail {
+  width: 50%;
+  height: 40%;
   margin: 1%;
   border-radius: 5%;
   display: flex;
-  padding: 1%;
-  flex-direction: column;
+  padding: auto;
   align-items: center;
-  justify-content: top;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-#light .Article {
+#light .ArticleDetail {
   background-color: rgb(212, 212, 212);
 }
 
-#dark .Article {
+#dark .ArticleDetail {
   background-color: rgb(54, 54, 54);
 }

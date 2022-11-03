@@ -1,4 +1,3 @@
-import { uid } from "uid";
 import { useState } from "react";
 import "./App.css";
 
@@ -21,7 +20,7 @@ function App() {
 export default App;
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState({ name: "Guest", role: "Guest" });
   return (
     <AuthContext.Provider value={currentUser}>
       <AuthDispatchContext.Provider value={setCurrentUser}>{children}</AuthDispatchContext.Provider>

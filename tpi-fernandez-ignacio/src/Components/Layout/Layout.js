@@ -4,7 +4,8 @@ import Body from "../Body/Body";
 import { SettingsContext } from "../Context/SettingsContext";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Navbar from "./Navbar";
+import Navbar from "./NavBar/Navbar";
+import "./Layout.css";
 
 const Layout = () => {
   const { theme } = useContext(SettingsContext);

@@ -1,11 +1,13 @@
 // mock de una api de login
-export function login(password) {
+export function login(username, password) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (password === "123456") {
-        resolve({ role: "Admin" });
+      if (username === "ignacio" && password === "123") {
+        resolve({ username, name: "Ignacio", role: "Admin" });
+      } else if (username === "Pedrito666" && password === "123456") {
+        resolve({ username, name: "Pedro", role: "Admin" });
       } else {
-        reject("Contraseña incorrecta");
+        reject("Usuario incorrecto");
       }
     }, Math.round(Math.random() * 1000));
   });

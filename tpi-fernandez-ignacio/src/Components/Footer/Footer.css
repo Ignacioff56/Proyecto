@@ -5,3 +5,9 @@
 #dark .Footer {
   background-color: rgb(28, 131, 67);
 }
+
+.Footer {
+  text-align: left;
+  height: 20vh;
+  width: 100%;
+}
