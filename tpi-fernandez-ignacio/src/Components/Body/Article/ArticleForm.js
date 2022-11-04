@@ -19,7 +19,7 @@ const ArticleForm = ({ getArticles }) => {
     if (event.target.value > 0) {
       setInputPrice(event.target.value);
     } else {
-      setInputPrice(0);
+      setInputPrice(null);
     }
   };
 
@@ -43,8 +43,15 @@ const ArticleForm = ({ getArticles }) => {
     } else if (articleData.Name.length < 3) {
       errorsValidation = { ...errorsValidation, Name: "El título del libro debe tener al menos 3 letras." };
     } else {
-      delete errorsValidation.title;
+      delete errorsValidation.Name;
     }
+    if (articleData.Price <= 0) {
+      errorsValidation = { ...errorsValidation, Price: "El precio debe ser mayor a 0" };
+    } else {
+      delete errorsValidation.Price;
+    }
+
+    return errorsValidation;
   };
 
   const submitHandler = () => {
@@ -55,18 +62,23 @@ const ArticleForm = ({ getArticles }) => {
       Image: inputImage,
       Price: inputPrice,
     };
-    // const errorsValidation = validateArticle(articleData);
+    const errorsValidation = validateArticle(articleData);
 
-    const querydb = getFirestore();
-    const queryCollection = collection(querydb, "Articles");
-    addDoc(queryCollection, articleData).then(({ id }) => console.log(id));
+    if (Object.keys(errorsValidation).length === 0) {
+      const querydb = getFirestore();
+      const queryCollection = collection(querydb, "Articles");
+      addDoc(queryCollection, articleData).then(({ id }) => console.log(id));
+      console.log("Errors validation", errorsValidation);
 
+      getArticles();
+    } else {
+      alert("Error al ingresar datos");
+    }
     setInputName("");
     setInputText("");
-    setInputCategory("Category1");
+    setInputCategory("Teclado");
     setInputImage("");
-    setInputPrice("");
-    getArticles();
+    setInputPrice(0);
   };
 
   return (
@@ -74,7 +86,7 @@ const ArticleForm = ({ getArticles }) => {
       <h3>Agregar Producto</h3>
       <div className="Inputs">
         <div>
-          <label>Titulo </label>
+          <label>Nombre </label>
           <input value={inputName} onChange={changeInputNameHandler} type="text" />
         </div>
         <div>
@@ -90,7 +102,7 @@ const ArticleForm = ({ getArticles }) => {
         </div>
         <div>
           <label>Imagen </label>
-          <input type={"url"} onChange={changeInputImageHandler}></input>
+          <input type={"url"} value={inputImage} onChange={changeInputImageHandler}></input>
         </div>
       </div>
       <button className="Submit_Button" onClick={submitHandler}>

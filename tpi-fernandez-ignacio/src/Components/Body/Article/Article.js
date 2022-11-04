@@ -33,7 +33,7 @@ const Article = ({ articleData, getArticles, loading }) => {
         Ver en detalle
       </Link>
       {authStatus.role === "Admin" && (
-        <button className="Button" onClick={DeleteHandler}>
+        <button className="DeleteButton" onClick={DeleteHandler}>
           Borrar
         </button>
       )}
