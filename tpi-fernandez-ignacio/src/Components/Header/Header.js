@@ -8,7 +8,7 @@ const Header = () => {
   const authStatus = useContext(AuthContext);
   return (
     <div className="Header">
-      <h1>Venta de Objetos materiales</h1>
+      <h1>Tienda de Computacion</h1>
       <button
         onClick={() => {
           setAppTheme({

@@ -1,5 +1,5 @@
 .NavBar {
-  width: 100%;
+  width: 99%;
 
   text-align: center;
   padding-bottom: 1%;
@@ -10,8 +10,32 @@
 
 #light .NavBar {
   background-color: rgb(177, 177, 177);
+  color: black;
 }
 
 #dark .NavBar {
   background-color: rgb(73, 73, 73);
+}
+
+.Button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: #3e8e41;
+}
+
+.Button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

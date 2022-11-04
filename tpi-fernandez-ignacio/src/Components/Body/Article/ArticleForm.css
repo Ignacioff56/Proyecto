@@ -1,16 +1,24 @@
 .ArticleForm {
-  background-color: rgb(73, 73, 73);
   align-items: center;
   justify-content: center;
   display: flex;
   padding-top: 1%;
   padding-bottom: 1%;
   flex-direction: column;
-  width: 100%;
+  width: auto;
+  color: aliceblue;
 
   text-align: center;
   padding-bottom: 1%;
 
   border-color: rgb(39, 87, 0);
   border-style: groove;
+}
+
+#light .ArticleForm {
+  background-color: rgb(160, 160, 160);
+}
+
+#dark .ArticleForm {
+  background-color: rgb(88, 88, 88);
 }

@@ -41,11 +41,11 @@ const Articles = () => {
 
   const articlesMapped = articlesList
     .filter((article) => (filterCategory === "All" ? article : article.Category === filterCategory))
-    .map((article) => <Article key={article.id} articleData={article} />);
+    .map((article) => <Article key={article.id} articleData={article} getArticles={getArticles} loading={setLoading} />);
 
   return (
     <div>
-      {authStatus.role === "Admin" && <ArticleForm />}
+      {authStatus.role === "Admin" && <ArticleForm getArticles={getArticles} />}
 
       <Filter filterCategory={filterCategory} categoryChanged={filterChangedHandler} label="Filtrar por categoria" all={true} />
 

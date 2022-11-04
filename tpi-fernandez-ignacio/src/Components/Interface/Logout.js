@@ -5,6 +5,7 @@ const LogoutButton = () => {
   const authStatus = useContext(AuthDispatchContext);
   return (
     <button
+      className="Button"
       onClick={() => {
         // cambiar context auth
         authStatus({ name: "Guest", role: "Guest" });

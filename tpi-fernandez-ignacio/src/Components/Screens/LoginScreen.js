@@ -13,11 +13,17 @@ const LoginScreen = ({}) => {
   return (
     <div className="LoginScreen">
       <h1>Login para Administradores</h1>
-      <label for="username">username</label>
-      <input id="username" type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
-      <label for="password">Contraseña </label>
-      <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+      <div>
+        <label for="username">Username: </label>
+        <input id="username" type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+      </div>
+      <div>
+        <label for="password">Contraseña: </label>
+        <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+      </div>
+
       <button
+        className="Button"
         onClick={() => {
           login(username, password)
             .then((user) => {

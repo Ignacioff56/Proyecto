@@ -10,9 +10,9 @@ const Filter = ({ filterCategory, categoryChanged, label, all }) => {
       <label>{label} </label>
       <select value={filterCategory} onChange={selectChangeHandler}>
         {all && <option value="All">Todos</option>}
-        <option value="Category1">Categoria 1</option>
-        <option value="Category2">Categoria 2</option>
-        <option value="Category3">Categoria 3</option>
+        <option value="Teclado">Teclado</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Auriculares">Auriculares</option>
       </select>
     </div>
   );

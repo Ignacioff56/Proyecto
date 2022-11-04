@@ -17,3 +17,11 @@
 #dark .ArticleDetail {
   background-color: rgb(54, 54, 54);
 }
+
+.ImageDetail {
+  max-width: 500px;
+  max-height: 500px;
+  background-color: rgb(8, 243, 0);
+  border-radius: 5px;
+  padding: 5px;
+}

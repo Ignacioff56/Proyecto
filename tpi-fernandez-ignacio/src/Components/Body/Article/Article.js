@@ -1,17 +1,44 @@
 import "./Article.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { collection, deleteDoc, doc, getFirestore } from "firebase/firestore";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
 
-const Article = ({ articleData }) => {
-  const Navigate = useNavigate();
+const Article = ({ articleData, getArticles, loading }) => {
+  const DeleteHandler = () => {
+    const querydb = getFirestore();
+    const docRef = doc(querydb, "Articles", articleData.id);
+    loading(true);
+    deleteDoc(docRef)
+      .then(() => {
+        console.log("Entire Document has been deleted successfully.");
+        getArticles();
+      })
+      .catch((error) => {
+        console.log(error);
+        getArticles();
+      });
+  };
+
+  const authStatus = useContext(AuthContext);
+
   return (
     <div className="Article">
       <h2>{articleData.Name}</h2>
       <p className="Category">Categoria: {articleData.Category}</p>
-      <p>{articleData.Text}</p>
+
+      <img className="Image" src={articleData.Image} alt="Imagen no encontrada"></img>
       <Link className="btn" to={`/Articles/${articleData.id}`}>
         Ver en detalle
       </Link>
+      {authStatus.role === "Admin" && (
+        <button className="Button" onClick={DeleteHandler}>
+          Borrar
+        </button>
+      )}
+      {console.log(articleData.image)}
+      <p className="Price">${articleData.Price}</p>
     </div>
   );
 };

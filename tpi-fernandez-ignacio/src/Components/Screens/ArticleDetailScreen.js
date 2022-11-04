@@ -34,8 +34,10 @@ const ArticleDetail = ({}) => {
       ) : (
         <div>
           <h2>{article.Name}</h2>
+          <img className="ImageDetail" src={article.Image} alt="Imagen no encontrada"></img>
           <p className="DetailCategory">Categoria: {article.Category}</p>
           <p>{article.Text}</p>
+          <p className="Price">Precio: ${article.Price}</p>
         </div>
       )}
     </div>

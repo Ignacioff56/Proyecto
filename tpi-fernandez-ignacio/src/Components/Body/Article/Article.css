@@ -8,6 +8,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: top;
+  border-style: groove;
+  border-color: rgb(8, 243, 0);
 }
 
 #light .Article {
@@ -15,5 +17,14 @@
 }
 
 #dark .Article {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(88, 88, 88);
+}
+
+.Image {
+  background-color: rgb(56, 56, 56);
+  border-radius: 5px;
+  padding: 5px;
+
+  max-height: 200px;
+  max-width: 200px;
 }
