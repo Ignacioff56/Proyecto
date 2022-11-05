@@ -3,8 +3,9 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="Footer">
-      <h2>Contacto: </h2>
-      <p>Numero: 99999999</p>
+      <div>
+        <h2>Fernandez Ignacio Faustino </h2>
+      </div>
     </div>
   );
 };

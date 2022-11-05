@@ -1,11 +1,11 @@
 import "./Article.css";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { collection, deleteDoc, doc, getFirestore } from "firebase/firestore";
+import { deleteDoc, doc, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 
 const Article = ({ articleData, getArticles, loading }) => {
+  const Navigate = useNavigate();
   const DeleteHandler = () => {
     const querydb = getFirestore();
     const docRef = doc(querydb, "Articles", articleData.id);
@@ -29,9 +29,9 @@ const Article = ({ articleData, getArticles, loading }) => {
       <p className="Category">Categoria: {articleData.Category}</p>
 
       <img className="Image" src={articleData.Image} alt="Imagen no encontrada"></img>
-      <Link className="btn" to={`/Articles/${articleData.id}`}>
-        Ver en detalle
-      </Link>
+      <button className="Button" onClick={() => Navigate(`/Articles/${articleData.id}`)}>
+        Ver
+      </button>
       {authStatus.role === "Admin" && (
         <button className="DeleteButton" onClick={DeleteHandler}>
           Borrar

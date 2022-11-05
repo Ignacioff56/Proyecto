@@ -20,7 +20,7 @@ function App() {
 export default App;
 
 const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState({ name: "Guest", role: "Guest" });
+  const [currentUser, setCurrentUser] = useState({ name: null, role: "Guest" });
   return (
     <AuthContext.Provider value={currentUser}>
       <AuthDispatchContext.Provider value={setCurrentUser}>{children}</AuthDispatchContext.Provider>
