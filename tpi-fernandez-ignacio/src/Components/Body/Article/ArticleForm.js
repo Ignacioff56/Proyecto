@@ -33,10 +33,8 @@ const ArticleForm = ({ getArticles }) => {
     setInputImage(event.target.value);
   };
 
-  const [errors, setErrors] = useState({});
-
   const validateArticle = (articleData) => {
-    let errorsValidation = { ...errors };
+    let errorsValidation = {};
 
     if (articleData.Name === "") {
       errorsValidation = { ...errorsValidation, Name: "Campo obligatorio." };
